@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel 数据核对工具</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Excel 数据核对工具</h1>
+      <p class="sub">
+        前后端分离版。先启动后端服务，再在这里点选两个表并下载结果。
+      </p>
+
+      <div class="card">
+        <label class="label">后端地址</label>
+        <input id="apiBase" class="input" placeholder="自动使用当前访问地址的 5051 端口" />
+
+        <label class="label">标准正确表</label>
+        <input id="standard" type="file" accept=".xlsx,.xls" />
+
+        <label class="label">人工手输表</label>
+        <input id="manual" type="file" accept=".xlsx,.xls" />
+
+        <button id="submitBtn">开始核对</button>
+        <div id="status" class="status"></div>
+      </div>
+
+      <div class="card">
+        <h3>核对摘要</h3>
+        <div id="summary" class="summary"></div>
+      </div>
+
+      <div class="card">
+        <h3>日志</h3>
+        <div id="logs" class="logs"></div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
